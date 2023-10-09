@@ -34,14 +34,14 @@ datapca = data
 #---------------Normalaziation of Data---------------#
 print('Normalaziation of Data', end="")
 scaler = StandardScaler()
-X_scaled = scaler.fit_transform(datapca)
+X = scaler.fit_transform(datapca)
 print("...done")
 
 
 #---------------Performing PCA---------------#
 print('Performing PCA', end="")
 pca = decomposition.PCA(n_components= num_columns)
-tdata=  pca.fit_transform(X_scaled)
+tdata=  pca.fit_transform(X)
 print("...done")
 cov_mat = np.cov(tdata)
 print(tdata)
